@@ -1,0 +1,7 @@
+domain: ishankhare.dev
+repo: github.com/ishankhare07/launchpad
+resources:
+- group: labs
+  kind: Workload
+  version: v1alpha1
+version: "2"

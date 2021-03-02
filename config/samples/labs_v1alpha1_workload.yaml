@@ -1,0 +1,27 @@
+apiVersion: labs.ishankhare.dev/v1alpha1
+kind: Workload
+metadata:
+  name: workload-sample
+spec:
+  host: helloworld
+  targets:
+    - name: helloworld-v1
+      namespace: default
+      trafficSplit:
+        hosts:
+          - helloworld
+        subsetName: v1
+        destinationHost: helloworld
+        subsetLabels:
+          version: v1
+        weight: 80
+    - name: helloworld-v2
+      namespace: default
+      trafficSplit:
+        hosts:
+          - helloworld
+        subsetName: v2
+        destinationHost: helloworld
+        subsetLabels:
+          version: v2
+        weight: 20
